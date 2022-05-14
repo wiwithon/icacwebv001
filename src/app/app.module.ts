@@ -8,10 +8,13 @@ import { FooterModule } from './@components/footer/footer.module';
 import { NavbarModule } from './@components/navbar/navbar.module';
 import { PagosModule } from './@components/pagos/pagos.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ConsultasComponent } from './@components/consultas/consultas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConsultasComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     NavbarModule,
     PagosModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

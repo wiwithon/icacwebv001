@@ -7,38 +7,34 @@
             <div class="card">
                 <div class="cards__text">
                     <p class="card__list">Busqueda por colegiatura</p>
-                    <input type="text" class="newsletter__input" placeholder="colegiatura">
+                    <input type="text" class="newsletter__input" placeholder="colegiatura" [(ngModel)]="term" name="colegiatura">
                     <input type="text" class="newsletter__input" placeholder="DNI">
-                    <a href="#" class="card__button">Consultar</a>
+                    <button (click)="consultar()" class="card__button">Consultar</button>
+                    
+
+
+
                     <p class="card__list">Busqueda por Nombres y apellidos</p>
                     <input type="text" class="newsletter__input" placeholder="Nombres">
                     <input type="text" class="newsletter__input" placeholder="Apellidos">
                     <a href="#" class="card__button">Consultar</a>
                 </div>
             </div>
-            <div>
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">colegiatura</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">Deuda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngfor="let colegiado of colegiados">
-                        <th scope="row">1</th>
-                        <td>{{colegiado.id}}</td>
-                        <td>{{colegiado.nombre}}</td>
-                        <td>{{colegiado.apellido}}</td>
-                        <td>{{colegiado.distrito}}</td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
+            <div *ngIf="colegiado">
+              <h3>Colegiatura: {{colegiado.colegiatura}}</h3>
+              <h3>Nombre: {{colegiado.nombre}}</h3>
+              <h4>Dni: {{colegiado.dni}}</h4>
+              <h4>-------------- Facturas ----------------</h4>
+              <table>
+                <tr *ngFor="let factura of facturas">
+                  <td>Factura: {{factura.id}}</td>
+                  <td>Fecha ultima: {{factura.fechaHasta}}</td>
+                </tr>
+              </table>
             </div>
-            
+            <div *ngIf="!colegiado">
+              <h1>nO EXISTE EL COLEGIADO</h1>
+            </div>
         </article>
 
     </div>
