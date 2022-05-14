@@ -16,6 +16,28 @@
                     <a href="#" class="card__button">Consultar</a>
                 </div>
             </div>
+            <div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">colegiatura</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Deuda</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngfor="let colegiado of colegiados">
+                        <th scope="row">1</th>
+                        <td>{{colegiado.id}}</td>
+                        <td>{{colegiado.nombre}}</td>
+                        <td>{{colegiado.apellido}}</td>
+                        <td>{{colegiado.distrito}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+            </div>
             
         </article>
 
