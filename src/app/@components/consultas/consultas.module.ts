@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConsultasComponent } from './consultas.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
-  declarations: [
-    ConsultasComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  exports:[ConsultasComponent]
+  exports:[]
 })
 export class ConsultasModule { }
