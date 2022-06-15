@@ -6,6 +6,8 @@ export class Habilidad {
     apellido:string;
     nombre:string;
     dni:string;
+    fechaColegiatura:string;
+    
 
     facturas:Factura[]=[];
 }

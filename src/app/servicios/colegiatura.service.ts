@@ -10,13 +10,11 @@ export class ColegiaturaService {
   url= 'https://prueba-back-abogados.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { 
-    console.log('el servicio esta funcionando');
   }
-  /*getColegiados(){
-    let heades = new HttpHeaders().set('Content-Type','aplication/json')
-    return this.http.get(this.url, {headers :heades});
-  }*/
   getColegiado(term:string):Observable<Habilidad>{
     return this.http.get<Habilidad>(this.url+`dxy1spv0/${term}`);
+  }
+  getColegiadoNom(nombre:string, apellidoP:string, apellidoM:string):Observable<Habilidad>{
+    return this.http.get<Habilidad>(this.url+`d2y3sñvx/${nombre}/${apellidoP} ${apellidoM}`);
   }
 }

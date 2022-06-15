@@ -1,41 +1,44 @@
 <section class="services">
     <div class="container">
         <h2 class="subtitle">Consulte su Habilidad<span class="point">.</span></h2>
-        <p class="copy__section">Para realizar la consulta puede escoger cualquiera de los dos metodos, no olvide completar ambos casilleros</p>
+        <p class="copy__section">Para realizar la consulta puede escoger cualquiera de los dos metodos, no olvide completar todos los casilleros por busqueda</p>
 
         <article class="container-cards">
             <div class="card">
                 <div class="cards__text">
                     <p class="card__list">Busqueda por colegiatura</p>
-                    <input type="text" class="newsletter__input" placeholder="colegiatura" [(ngModel)]="term" name="colegiatura">
-                    <input type="text" class="newsletter__input" placeholder="DNI">
-                    <button (click)="consultar()" class="card__button">Consultar</button>
-                    
-
-
+                    <input type="text" class="newsletter__input" placeholder="Colegiatura" [(ngModel)]="term" name="colegiatura">
+                    <button (click)="consultar();" class="card__button">Consultar</button>
 
                     <p class="card__list">Busqueda por Nombres y apellidos</p>
-                    <input type="text" class="newsletter__input" placeholder="Nombres">
-                    <input type="text" class="newsletter__input" placeholder="Apellidos">
-                    <a href="#" class="card__button">Consultar</a>
+                    <input type="text" class="newsletter__input" placeholder="Nombre Completo" [(ngModel)]="Nombre" name="nombre">
+                    <input type="text" class="newsletter__input" placeholder="Apellido Paterno" [(ngModel)]="ApellidoP" name="apellidoP">
+                    <input type="text" class="newsletter__input" placeholder="Apellido Materno" [(ngModel)]="ApellidoM" name="apellidoM">
+                    <button (click)="consultarNom();" class="card__button">Consultar</button>
+                    
                 </div>
             </div>
-            <div *ngIf="colegiado">
+            <div class="card1" class="container-bg">
+              <img src="assets/img/linea.png">
+              <div class="cards__text"></div>
+            </div>
+            
+            <!-- <div></div> -->
+            <!-- <div *ngIf="colegiado">
               <h3>Colegiatura: {{colegiado.colegiatura}}</h3>
               <h3>Nombre: {{colegiado.nombre}}</h3>
               <h4>Dni: {{colegiado.dni}}</h4>
               <h4>-------------- Facturas ----------------</h4>
               <table>
-                <tr *ngFor="let factura of facturas">
+                <tr *ngFor="let factura of facturas">  
                   <td>Factura: {{factura.id}}</td>
                   <td>Fecha ultima: {{factura.fechaHasta}}</td>
                 </tr>
               </table>
             </div>
             <div *ngIf="!colegiado">
-              <h1>nO EXISTE EL COLEGIADO</h1>
-            </div>
+              <h1>NO EXISTE EL COLEGIADO</h1>
+            </div> -->
         </article>
-
     </div>
 </section>

@@ -10,6 +10,10 @@ import { PagosModule } from './@components/pagos/pagos.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ConsultasComponent } from './@components/consultas/consultas.component';
+import { SpinnerModule } from './shared/components/spinner/spinner.module';
+// inport interceptors
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerInterceptor } from './shared/interceptors/spinner.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,9 +27,12 @@ import { ConsultasComponent } from './@components/consultas/consultas.component'
     NavbarModule,
     PagosModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SpinnerModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:SpinnerInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
